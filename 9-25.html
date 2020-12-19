@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>汽车俱乐部</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        ul {
+            list-style-type: none;
+        }
+        .clear:after {
+            content: '';
+            display: block;
+            height: 0;
+            clear: both;
+        }
+        .header {}
+        .header-top {
+            height: 32px;
+            line-height: 32px;
+            border-bottom: 1px solid rgba(218, 218, 218, 1);
+        }
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .header-info {
+            float: right;
+        }
+        .header-info li {
+            margin-left: 27px;
+            float: left;
+        }
+        .header-info a {
+            font-size: 12px;
+            font-weight: 300;
+            color: rgba(0, 0, 0, 1);
+        }
+        .iphone {
+            padding-left: 17px;
+            background: url(C:\Users\hp\Pictures\demo\images\iphone.png) no-repeat left center;
+        }
+        .weixin {
+            padding-left: 24px;
+            background: url(C:\Users\hp\Pictures\demo\images\weixin.png) no-repeat left center;
+        }
+        .header-bottom {
+            height: 100px;
+        }
+        .logo {
+            padding-top: 14px;
+            float: left;
+        }
+        .nav {
+            float: left;
+            margin-top: 38px;
+        }
+        .nav li {
+            float: left;
+            width: 122px;
+            text-align: center;
+            border-right: 1px solid black;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .nav .last {
+            border: none;
+        }
+        .nav a {
+            color: rgba(0, 0, 0, 1);
+        }
+        .form {
+            float: right;
+            margin-top: 34px;
+        }
+        .search {
+            float: left;
+            width: 145px;
+            padding: 9px;
+            border: 1px solid rgba(208, 61, 61, 1);
+        }
+        .submit {
+            float: left;
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgb(208, 61, 61, 1);
+            background: rgba(208, 61, 61, 1) url(C:\Users\hp\Pictures\demo\images\search.png) no-repeat center center;
+        }
+        .box {
+            width: 500px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            padding: 5px;
+ 
+        }
+        .inner{
+            width: 500px;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+        .inner img{
+            width: 500px;
+            height: 300px;
+            vertical-align: top
+        }
+        ul {
+            width: 1000%;
+            position: absolute;
+            list-style: none;
+            left:0;
+            top: 0;
+        }
+        .inner li{
+            float: left;
+ 
+        }
+ 
+        ol {
+            position: absolute;
+            height: 20px;
+            right: 20px;
+            bottom: 20px;
+            text-align: center;
+            padding: 5px;
+        }
+        ol li{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            background-color: #fff;
+            margin: 5px;
+            cursor: pointer;
+ 
+        }
+        ol .current{
+            background-color: red;
+        }
+        #arr{
+            display: none;
+        }
+        #arr span{
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #fff;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #000;
+            opacity: 0.5;
+            border: 1px solid #fff;
+        }
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+        .server-info {
+            height: 135px;
+            background: rgba(58, 58, 58, 0.8);
+            text-align: center;
+        }
+        .server-info ul {
+            display: inline-block;
+            margin-top: 650px;
+        }
+        .server-info li {
+            float: left;
+            padding: 0 82px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-top">
+            <div class="container clear">
+                <ul class="header-info clear">
+                    <li id = denglu><a href="#">登陆/注册</a></li>
+                    <li class="iphone"><a href="#">移动客户端</a></li>
+                    <li class="weixin"><a href="#">微信</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container clear">
+                
+                <ul class="nav clear">
+                    <li class="first" id="first0"><a href="#">品牌</a></li>
+                    <li><a href="#">合作伙伴</a></li>
+                    <li><a href="#">AMG</a></li>
+                    <li><a href="#">M</a></li>
+                    <li><a href="#">RS</a></li>
+                    <li class="last"><a href="#">俱乐部</a></li>
+                </ul>
+                <form class="form clear">
+                    <input type="text" placeholder="感兴趣的事情" class="search" id="sousuo"/>
+                    <input type="button" class="submit" value="搜索"/>
+                </form>
+            </div>
+        </div>
+    </div>
+<div class="box" id="box">
+    <div class="inner">
+        <ul>
+            <li><a href="#"><img src="C:\Users\hp\Pictures\239691393_1604892858715_thumb.jpg" alt=""></a></li>
+            <li><a href="#"><img src="C:\Users\hp\Pictures\636868783206388267EG.jpg" alt=""></a></li>
+            <li><a href="#"><img src="C:\Users\hp\Pictures\a7cab362b0a8c447920ba6e4245af396.jpg.source.jpg" alt=""></a></li>
+            <li><a href="#"><img src="C:\Users\hp\Pictures\gallery14.webp.jpg" alt=""></a></li>
+            <li><a href="#"><img src="C:\Users\hp\Pictures\pl-12-media-hd1.jpg" alt=""></a></li>
+ 
+        </ul>
+ 
+        <ol class="bar">
+ 
+        </ol>
+        <div id="arr">
+                    <span id="left">
+                        <
+                    </span>
+            <span id="right">
+                        >
+                    </span>
+        </div>
+ 
+    </div>
+</div>
+<div class="server">
+        <div class="server-info">
+            <ul class="clear">
+                <li>
+                    <img src="C:\Users\hp\Pictures\demo\images\info1.png" alt="" />
+                    <p>私人定制</p>
+                </li>
+                <li>
+                    <img src="C:\Users\hp\Pictures\demo\images\info2.png" alt="" />
+                    <p>收藏</p>
+                </li>
+                <li>
+                    <img src="C:\Users\hp\Pictures\demo\images\info3.png" alt="" />
+                    <p>加入我们</p>
+                </li>
+                <li>
+                    <img src="C:\Users\hp\Pictures\demo\images\info4.png" alt="" />
+                    <p>送礼</p>
+                </li>
+                <li>
+                    <img src="C:\Users\hp\Pictures\demo\images\info5.png" alt="" />
+                    <p>俱乐部活动</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+<script>
+    /*图片滑动*/
+    function my$(id) {
+        return document.getElementById(id);
+    }
+    var box=my$("box");
+    var inner=box.children[0];
+    var ulObj=inner.children[0];
+    var list=ulObj.children;
+    var olObj=inner.children[1];
+    var arr=my$("arr");
+    var imgWidth=inner.offsetWidth;
+    var right=my$("right");
+    var pic=0;
+    for(var i=0;i<list.length;i++){
+        var liObj=document.createElement("li");
+ 
+        olObj.appendChild(liObj);
+        liObj.innerText=(i+1);
+        liObj.setAttribute("index",i);
+        liObj.onmouseover=function () {
+ 
+            for (var j=0;j<olObj.children.length;j++){
+                olObj.children[j].removeAttribute("class");
+            }
+            this.className="current";
+            pic=this.getAttribute("index");
+            animate(ulObj,-pic*imgWidth);
+        }
+ 
+    }
+    olObj.children[0].className = "current";
+    ulObj.appendChild(ulObj.children[0].cloneNode(true));
+    var timeId=setInterval(onmouseclickHandle,1000);
+    box.onmouseover=function () {
+        arr.style.display="block";
+        clearInterval(timeId);
+    };
+    box.onmouseout=function () {
+        arr.style.display="none";
+        timeId=setInterval(onmouseclickHandle,1000);
+    };
+ 
+    right.onclick=onmouseclickHandle;
+    function onmouseclickHandle() {
+        if (pic == list.length - 1) {
+            pic = 0;
+            ulObj.style.left = 0 + "px";
+        }
+        pic++;
+        animate(ulObj, -pic * imgWidth);
+        if (pic == list.length - 1) {
+            olObj.children[olObj.children.length - 1].className = "";
+            olObj.children[0].className = "current";
+        } else {
+            for (var i = 0; i < olObj.children.length; i++) {
+                olObj.children[i].removeAttribute("class");
+            }
+            olObj.children[pic].className = "current";
+        }
+    }
+    left.onclick=function () {
+        if (pic==0){
+            pic=list.length-1;
+            ulObj.style.left=-pic*imgWidth+"px";
+        }
+        pic--;
+        animate(ulObj,-pic*imgWidth);
+        for (var i = 0; i < olObj.children.length; i++) {
+            olObj.children[i].removeAttribute("class");
+        }
+        olObj.children[pic].className = "current";
+    };
+    function animate(element, target) {
+        clearInterval(element.timeId);
+        element.timeId = setInterval(function () {
+            var current = element.offsetLeft;
+            var step = 10;
+            step = current < target ? step : -step;
+            current += step;
+            if (Math.abs(current - target) > Math.abs(step)) {
+                element.style.left = current + "px";
+            } else {
+                clearInterval(element.timeId);
+                element.style.left = target + "px";
+            }
+        }, 10);
+    }
+    /*网页跳转*/
+    var pinpai=document.getElementById("first0");
+    pinpai.setAttribute("onclick","pinpai1()");
+    function pinpai1(){
+        window.open("https://www.so.com/s?q=%E6%B1%BD%E8%BD%A6%E5%93%81%E7%89%8C&src=srp&fr=hao_360so_a1004_suggest_history_b_cube&psid=5809d1eef3c2186ceaf8567313d1a759")
+    }
+    var hezuo=pinpai.nextElementSibling;
+    hezuo.setAttribute("onclick","hezuo1()");
+    function hezuo1(){
+        window.open("http://www.toyota.com.cn/")
+    }
+    var amg=hezuo.nextElementSibling;
+    amg.setAttribute("onclick","amg1()");
+    function amg1(){
+        window.open("https://www.mercedes-benz.com.cn/amg.html")
+    }
+    var m=amg.nextElementSibling;
+    m.setAttribute("onclick","m1()");
+    function m1(){
+        window.open("https://www.bmw-m.com/en/index.html")
+    }
+    var rs=m.nextElementSibling;
+    rs.setAttribute("onclick","rs1()");
+    function rs1(){
+        window.open("https://sport.audi.cn/rs3.html")
+    }
+    var jvlebu=rs.nextElementSibling;
+    jvlebu.setAttribute("onclick","jvlebu1()");
+    function jvlebu1(){
+        window.open("https://baike.so.com/doc/381824-404323.html")
+    }
+    /*搜索*/
+    /*
+    var sousuo=document.getElementById("sousuo");
+    sousuo.setAttribute("onclick","sousuo1()");
+    function denglu1(){
+        window.onload = function(){
+        var setIntervalId = setInterval(function(){
+            if(num == 0){
+                clearInterval(setIntervalId);
+                window.prompt("请输入您的手机号",中国大陆1***);
+            }
+        },1000);
+    }*/
+</script>
+</body>
+</html>
